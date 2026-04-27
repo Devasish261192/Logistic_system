@@ -27,6 +27,56 @@ LogiTrack is a precision-engineered ERP system designed for logistics companies 
 └── package.json           # Dependencies and scripts
 ```
 
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (v18 or higher recommended)
+- npm or yarn
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Devasish261192/Logistic_system.git
+   cd Logistic_system
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Set up environment variables:
+   Copy `.env.example` to `.env` (if applicable) and configure as needed.
+
+### Running the Application Locally
+1. Start the development server and backend concurrently:
+   ```bash
+   npm run dev
+   ```
+2. Open your browser and navigate to the URL provided in your terminal (typically `http://localhost:5173` or similar).
+
+## 📖 How to Use LogiTrack ERP
+
+### 1. Initial Login
+Use the provided test credentials (at the bottom of this page) to log in based on the role you want to test.
+- **Super Admin:** Dashboard analytics, user creation, and full read access.
+- **Supervisor:** Consignment creation, assigning drivers, and logging attendance.
+- **Driver:** Mobile-optimized view for executing assigned tasks and uploading delivery proofs.
+
+### 2. Creating and Managing Consignments
+- Log in as a **Supervisor**.
+- Navigate to the Consignment tab and create a new entry. Fill out the manifest details, vehicle number, and assign a driver.
+- Capture photos (via webcam or mobile camera) for load verification.
+
+### 3. Driver Execution
+- Log in as a **Driver**.
+- View your assigned consignments.
+- Complete deliveries by taking a photo of the signed Lorry Receipt (LR) to close out the task.
+
+### 4. Financial & Operational Logs
+- **Supervisors** can mark daily attendance and log maintenance costs for vehicles.
+- **Drivers** can log fuel expenses (amount and receipt photo).
+- **Super Admins** can review all logs to track operational costs and efficiencies.
+
+
 ## 🛠 Features & Status
 
 ### 1. Role-Based Access Control (RBAC)
