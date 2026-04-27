@@ -1,0 +1,5 @@
+{
+  "name": "LogiTrack ERP",
+  "description": "A comprehensive logistics management system for trucking operations, featuring role-based dashboards for admins, supervisors, and drivers.",
+  "requestFramePermissions": ["camera"]
+}

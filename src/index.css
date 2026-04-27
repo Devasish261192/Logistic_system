@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  :root {
+    --bg: #E4E3E0;
+    --ink: #141414;
+    --line: rgba(20, 20, 20, 0.1);
+    --accent: #2563eb;
+    --card-bg: rgba(255, 255, 255, 0.5);
+  }
+
+  [data-theme="dark"] {
+    --bg: #121212;
+    --ink: #E4E3E0;
+    --line: rgba(228, 227, 224, 0.1);
+    --accent: #3b82f6;
+    --card-bg: rgba(255, 255, 255, 0.05);
+  }
+
+  [data-theme="solarized"] {
+    --bg: #002b36;
+    --ink: #839496;
+    --line: rgba(131, 148, 150, 0.1);
+    --accent: #268bd2;
+    --card-bg: rgba(7, 54, 66, 0.5);
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+@layer components {
+  /* Technical Dashboard Styles */
+  .data-grid-header {
+    @apply border-b border-[var(--ink)]/20 pb-2 mb-4;
+  }
+
+  .col-header {
+    font-family: 'Georgia', serif;
+    font-style: italic;
+    font-size: 11px;
+    opacity: 0.6;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .data-row {
+    @apply border-b border-[var(--ink)]/5 py-4 transition-colors;
+  }
+
+  .data-row:hover {
+    @apply bg-[var(--ink)] text-[var(--bg)];
+  }
+
+  .data-value {
+    font-family: var(--font-mono);
+    letter-spacing: -0.02em;
+    font-size: 0.9rem;
+  }
+
+  .btn-primary {
+    @apply bg-[var(--ink)] text-[var(--bg)] px-4 py-2 text-xs uppercase tracking-widest font-bold border border-[var(--ink)] transition-all hover:bg-transparent hover:text-[var(--ink)];
+  }
+
+  .btn-outline {
+    @apply border border-[var(--ink)] px-4 py-2 text-xs uppercase tracking-widest font-bold transition-all hover:bg-[var(--ink)] hover:text-[var(--bg)];
+  }
+
+  .card-architect {
+    @apply border border-[var(--ink)]/10 bg-[var(--card-bg)] backdrop-blur-sm p-6 rounded-none;
+  }
+
+  .input-architect {
+    @apply bg-transparent border-b border-[var(--ink)]/20 py-2 focus:border-[var(--ink)] outline-none transition-colors;
+    color: var(--ink);
+    background-color: var(--bg);
+  }
+
+  .input-architect::placeholder {
+    color: var(--ink);
+    opacity: 0.4;
+  }
+
+  /* Ensure selects and their options follow the current theme */
+  select.input-architect {
+    background-color: var(--bg);
+    color: var(--ink);
+  }
+
+  select.input-architect option {
+    background-color: var(--bg);
+    color: var(--ink);
+  }
+}
